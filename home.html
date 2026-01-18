@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Borcelle Pastelería</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <main class="lp">
+    
+    <!-- Menú desplegable -->
+    <nav class="lp__nav">
+      <div class="nav-container">
+        <div class="logo-mobile">
+          <img src="img/Logo Pastelería Ilustrado Rosa.png" alt="Logo Borcelle Pastelería">
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="lp__menu" id="mainMenu">
+          <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+          <li class="menu-dropdown">
+            <a href="#" class="dropdown-toggle">
+              <i class="fas fa-birthday-cake"></i> Productos <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="menu.html#pasteles"><i class="fas fa-cake"></i> Pasteles</a></li>
+              <li><a href="menu.html#cupcakes"><i class="fas fa-cupcake"></i> Cupcakes</a></li>
+              <li><a href="menu.html#galletas"><i class="fas fa-cookie"></i> Galletas</a></li>
+              <li><a href="menu.html#postres"><i class="fas fa-ice-cream"></i> Postres Especiales</a></li>
+              <li><a href="menu.html#bebidas"><i class="fas fa-coffee"></i> Bebidas</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+          <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+          <li class="menu-dropdown">
+            <a href="#" class="dropdown-toggle">
+              <i class="fas fa-user"></i> Mi Cuenta <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+              <li><a href="#"><i class="fas fa-heart"></i> Favoritos</a></li>
+              <li><a href="#"><i class="fas fa-history"></i> Pedidos</a></li>
+              <li><a href="#"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Logo principal (solo visible en desktop) -->
+    <section class="lp__logo">
+      <img src="img/Logo Pastelería Ilustrado Rosa.png" alt="Logo Borcelle Pastelería">
+    </section>
+    
+    <!-- Contenido restante permanece igual -->
+    <section class="lp__about lp__home-text">
+      <h2>Nuestra Filosofía</h2>
+      <p>Bienvenidos a Borcelle Pastelería, un lugar donde la creatividad y la tradición se encuentran para ofrecer experiencias dulces únicas. Cada pastel, cupcake y galleta es elaborado cuidadosamente con ingredientes frescos y de calidad, pensando en la felicidad de nuestros clientes.</p>
+
+      <p>Nos apasiona la repostería artesanal, y nuestro equipo de expertos trabaja día a día para innovar en sabores, texturas y decoraciones. Desde los clásicos que todos aman hasta creaciones personalizadas para ocasiones especiales, nuestro objetivo es endulzar cada momento de tu vida.</p>
+
+      <p>En Borcelle Pastelería también valoramos la atención al cliente. Queremos que cada visita, ya sea física o en nuestra página web, sea una experiencia agradable y memorable. Nos esforzamos por ofrecer un servicio cercano y personalizado, escuchando tus ideas y convirtiéndolas en dulces realidad.</p>
+
+      <p>Además, nuestra página web está diseñada para que puedas explorar fácilmente nuestro menú, conocer más sobre nosotros y contactarnos de manera rápida y sencilla. ¡Descubre la magia de la repostería artesanal con Borcelle Pastelería y déjate llevar por los sabores que despiertan tus sentidos!</p>
+    </section>
+  </main>
+  
+  <script src="js/menu.js"></script>
+</body>
+</html>

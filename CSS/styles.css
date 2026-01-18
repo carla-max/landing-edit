@@ -1,0 +1,670 @@
+@charset "UTF-8";
+.lp {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* Menú desplegable mejorado */
+.lp__nav {
+  background-color: #f8c8d8;
+  padding: 0;
+  margin-bottom: 2rem;
+  position: relative;
+  -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lp__nav .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.lp__nav .logo-mobile {
+  display: none;
+}
+
+.lp__nav .logo-mobile img {
+  max-height: 50px;
+  width: auto;
+}
+
+.lp__nav .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #d6336c;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.lp__nav .menu-toggle:hover {
+  color: #ff4d88;
+}
+
+.lp__nav .lp__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  /* Estilos para elementos con dropdown */
+}
+
+.lp__nav .lp__menu li {
+  position: relative;
+}
+
+.lp__nav .lp__menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+.lp__nav .lp__menu li a:hover {
+  background-color: #ff99b3;
+  color: white;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lp__nav .lp__menu li a i {
+  font-size: 14px;
+}
+
+.lp__nav .lp__menu .menu-dropdown {
+  /* Menú desplegable */
+}
+
+.lp__nav .lp__menu .menu-dropdown > a {
+  position: relative;
+  padding-right: 35px;
+}
+
+.lp__nav .lp__menu .menu-dropdown .dropdown-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  font-size: 12px;
+}
+
+.lp__nav .lp__menu .menu-dropdown:hover .dropdown-icon {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+.lp__nav .lp__menu .menu-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-10px);
+          transform: translateX(-50%) translateY(-10px);
+  background-color: white;
+  min-width: 200px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.lp__nav .lp__menu .menu-dropdown .dropdown-menu:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
+.lp__nav .lp__menu .menu-dropdown .dropdown-menu li {
+  display: block;
+  margin: 0;
+}
+
+.lp__nav .lp__menu .menu-dropdown .dropdown-menu li a {
+  padding: 12px 20px;
+  border-radius: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: #555;
+  font-weight: normal;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.lp__nav .lp__menu .menu-dropdown .dropdown-menu li a:hover {
+  background-color: #fff0f6;
+  color: #d6336c;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.lp__nav .lp__menu .menu-dropdown .dropdown-menu li a:last-child {
+  border-bottom: none;
+}
+
+.lp__nav .lp__menu .menu-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(0);
+}
+
+/* Ajustes para el contenido principal */
+.lp__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0 2rem;
+}
+
+.lp__logo img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.lp__logo img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+/* Resto de estilos permanecen igual... */
+.lp__header {
+  margin-bottom: 2rem;
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  -webkit-animation: slideUp 0.8s forwards;
+          animation: slideUp 0.8s forwards;
+}
+
+.lp__header__title {
+  font-size: 2.5rem;
+  color: #d6336c;
+  -webkit-transition: color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.lp__header__title:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  color: #ff4d88;
+}
+
+.lp__header__subtitle {
+  color: #555;
+}
+
+.lp__productos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 2rem;
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  -webkit-animation: slideUp 0.8s forwards;
+          animation: slideUp 0.8s forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.lp__productos .producto {
+  background: #fff0f6;
+  padding: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-transform 0.4s ease, -webkit-box-shadow 0.4s ease;
+  transition: -webkit-transform 0.4s ease, -webkit-box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, -webkit-transform 0.4s ease, -webkit-box-shadow 0.4s ease;
+}
+
+.lp__productos .producto:hover {
+  -webkit-transform: translateY(-10px) scale(1.05);
+          transform: translateY(-10px) scale(1.05);
+  -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.lp__productos .producto img {
+  max-width: 100%;
+  border-radius: 10px;
+  -webkit-transition: -webkit-transform 0.4s ease, -webkit-filter 0.4s ease;
+  transition: -webkit-transform 0.4s ease, -webkit-filter 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease, -webkit-transform 0.4s ease, -webkit-filter 0.4s ease;
+}
+
+.lp__productos .producto img:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+}
+
+.lp__about {
+  margin: 2rem 0;
+  padding: 20px;
+  background-color: #fff0f6;
+  border-radius: 15px;
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  -webkit-animation: slideUp 0.8s forwards;
+          animation: slideUp 0.8s forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.lp__about h2 {
+  color: #d6336c;
+  margin-bottom: 1.5rem;
+}
+
+.lp__about p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.lp__team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.lp__team .team-member {
+  text-align: center;
+}
+
+.lp__team .team-member img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.lp__team .team-member img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.lp__team .team-member p {
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin: 3rem 0;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #d6336c;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2px rgba(214, 51, 108, 0.2);
+          box-shadow: 0 0 0 2px rgba(214, 51, 108, 0.2);
+}
+
+.contact-form button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background-color: #d6336c;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background-color: #ff4d88;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(255, 77, 136, 0.3);
+          box-shadow: 0 4px 12px rgba(255, 77, 136, 0.3);
+}
+
+.lp__contacto .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.lp__contacto .social-icons .circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #d6336c;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.2rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.lp__contacto .social-icons .circle:hover {
+  -webkit-transform: scale(1.2) rotate(5deg);
+          transform: scale(1.2) rotate(5deg);
+  background-color: #ff4d88;
+  -webkit-box-shadow: 0 4px 12px rgba(255, 77, 136, 0.3);
+          box-shadow: 0 4px 12px rgba(255, 77, 136, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .lp__nav .lp__menu {
+    gap: 10px;
+  }
+  .lp__nav .lp__menu li a {
+    padding: 10px 15px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lp {
+    padding: 10px;
+  }
+  .lp__nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .lp__nav .nav-container {
+    padding: 10px;
+  }
+  .lp__nav .logo-mobile {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .lp__nav .menu-toggle {
+    display: block;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .lp__nav .lp__menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #f8c8d8;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+    padding: 20px;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 999;
+    border-radius: 0 0 15px 15px;
+  }
+  .lp__nav .lp__menu.active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .lp__nav .lp__menu li {
+    width: 100%;
+    margin: 5px 0;
+    /* Dropdown en móvil */
+  }
+  .lp__nav .lp__menu li a {
+    padding: 15px;
+    border-radius: 10px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .lp__nav .lp__menu li.menu-dropdown .dropdown-toggle {
+    position: relative;
+    padding-right: 50px;
+  }
+  .lp__nav .lp__menu li.menu-dropdown .dropdown-toggle .dropdown-icon {
+    right: 20px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .lp__nav .lp__menu li.menu-dropdown .dropdown-menu {
+    position: static;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+    visibility: visible;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: none;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .lp__nav .lp__menu li.menu-dropdown .dropdown-menu li a {
+    padding-left: 40px;
+    font-size: 14px;
+  }
+  .lp__nav .lp__menu li.menu-dropdown.active .dropdown-menu {
+    display: block;
+  }
+  .lp__nav .lp__menu li.menu-dropdown.active .dropdown-icon {
+    -webkit-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
+  }
+  .lp__logo {
+    display: none;
+    /* Ocultamos el logo grande en móvil porque ya está en el menú */
+  }
+  .lp__title {
+    font-size: 2rem;
+  }
+  .lp__subtitle {
+    font-size: 0.95rem;
+  }
+  .lp__productos {
+    -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  .lp__about {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+  .lp__team {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+  .team-member img {
+    width: 130px;
+    height: 130px;
+  }
+  .contact-form input, .contact-form textarea {
+    max-width: 100%;
+  }
+  .contact-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .lp__title {
+    font-size: 1.7rem;
+  }
+  .lp__subtitle {
+    font-size: 0.9rem;
+  }
+  .lp__productos {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .lp .contact-form button {
+    font-size: 0.95rem;
+  }
+  .lp__nav .lp__menu {
+    top: 60px;
+    padding: 15px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
